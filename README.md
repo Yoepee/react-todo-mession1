@@ -17,12 +17,13 @@
 
 ## ⚙️ 기술 스택
 
-| 기술         | 설명                                 |
-| ------------ | ------------------------------------ |
-| React        | UI 라이브러리                        |
-| TypeScript   | 정적 타입 언어                       |
-| Zustand      | 간단하고 가벼운 전역 상태 관리 도구  |
-| localStorage | 데이터 영속성 확보 (브라우저 저장소) |
+| 기술         | 설명                                            |
+| ------------ | ----------------------------------------------- |
+| React        | UI 라이브러리                                   |
+| TypeScript   | 정적 타입 언어                                  |
+| Zustand      | 간단하고 가벼운 전역 상태 관리 도구             |
+| localStorage | 데이터 영속성 확보 (브라우저 저장소)            |
+| Vite         | 빠른 개발 서버 및 빌드 도구 (프론트엔드 번들러) |
 
 ---
 
@@ -30,27 +31,27 @@
 
 ```
 src/
-├── components/ 컴포넌트
+├── components/ # 컴포넌트
 │   └── TodoList
 │       └── TodoItem.tsx
 │       └── TodoList.tsx
 │   └── TodoSubmitForm
 │       └── TodoSubmitForm.tsx
-├── hooks/ 커스텀 Hook
+├── hooks/ # 커스텀 Hook
 │ └── useTodos.ts
 │ └── useBoolean.ts
 │ └── useLocalStorage.ts
-├── store/ 전역 상태관리
+├── store/ # 전역 상태관리
 │ └── useTodoStore.ts
-├── interfaces/ 타입
+├── interfaces/ # 타입
 │ └── todo.ts
-├── contexts/ Context API
+├── contexts/ # Context API
 │ └── TodoContext.ts
 │ └── TodoProvider.ts
-├── consts/ 상수 값
+├── consts/ # 상수 값
 │ └── index.ts
-├── .prettierrc prettier 옵션
-├── tailwind.config.js tailwind 설정
+├── .prettierrc # prettier 옵션
+├── tailwind.config.js # tailwind 설정
 ├── App.tsx
 └── main.tsx
 ```
