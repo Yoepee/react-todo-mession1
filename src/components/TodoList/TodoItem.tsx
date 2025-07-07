@@ -28,27 +28,59 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
     };
 
     return (
-        <li>
-            <input
-                type="checkbox"
-                readOnly
-                checked={todo.completed}
-                onClick={() => toggleTodo(todo.id)}
-            />
-            <span className="relative" onClick={() => toggleTodo(todo.id)}>
-                {todo.todo}
-                <form
-                    className="absolute top-[100%] left-0 bg-white z-10"
-                    style={{ display: isModifyMode ? "flex" : "none" }}
-                    onSubmit={handleSubmit}
-                    onClick={(e) => e.stopPropagation()}
+        <li className="bg-white rounded-lg shadow flex items-center justify-between px-4 py-3">
+            <div className="flex items-center gap-3">
+                <input
+                    type="checkbox"
+                    readOnly
+                    checked={todo.completed}
+                    onClick={() => toggleTodo(todo.id)}
+                    className="w-5 h-5 text-indigo-600"
+                />
+                <span
+                    className={`relative text-gray-800 cursor-pointer ${
+                        todo.completed ? "line-through text-gray-400" : ""
+                    }`}
+                    onClick={() => toggleTodo(todo.id)}
                 >
-                    <input ref={inputRef} />
-                    <button>저장</button>
-                </form>
-            </span>
-            <button onClick={() => handleToggle()}>수정</button>
-            <button onClick={() => removeTodo(todo.id)}>삭제</button>
+                    {todo.todo}
+
+                    {/* 수정 폼 */}
+                    <form
+                        className={`absolute top-full left-0 mt-1 flex items-center gap-2 bg-white p-2 border rounded shadow z-10 ${
+                            isModifyMode ? "flex" : "hidden"
+                        }`}
+                        onSubmit={handleSubmit}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <input
+                            ref={inputRef}
+                            className="border px-2 py-1 rounded"
+                        />
+                        <button
+                            type="submit"
+                            className="text-sm px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+                        >
+                            저장
+                        </button>
+                    </form>
+                </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+                <button
+                    onClick={() => handleToggle()}
+                    className="text-sm px-2 py-1 bg-yellow-400 text-white rounded hover:bg-yellow-500"
+                >
+                    수정
+                </button>
+                <button
+                    onClick={() => removeTodo(todo.id)}
+                    className="text-sm px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                >
+                    삭제
+                </button>
+            </div>
         </li>
     );
 };
