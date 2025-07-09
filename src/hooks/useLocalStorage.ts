@@ -4,7 +4,7 @@ const useLocalStorage = () => {
         try {
             storage.setItem(key, value);
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
     };
 
@@ -15,7 +15,7 @@ const useLocalStorage = () => {
             if (storageValue) return JSON.parse(storageValue);
             else return defaultValue;
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
     };
 

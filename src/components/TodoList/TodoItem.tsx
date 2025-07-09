@@ -59,9 +59,16 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
                         />
                         <button
                             type="submit"
-                            className="text-sm px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+                            className="text-sm px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 whitespace-nowrap"
                         >
                             저장
+                        </button>
+                        <button
+                            type="button"
+                            className="text-sm px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 whitespace-nowrap"
+                            onClick={closeModifyMode}
+                        >
+                            취소
                         </button>
                     </form>
                 </span>
